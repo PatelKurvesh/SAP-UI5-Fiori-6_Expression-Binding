@@ -1,0 +1,9 @@
+{
+	"cardata":{
+		"name":"Baleno",
+		"price":640000,
+		"worth":true,
+		"star":4,
+		"abl":true
+	}
+}

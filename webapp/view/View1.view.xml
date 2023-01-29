@@ -1,9 +1,35 @@
 <mvc:View controllerName="GithubSAP-UI5-Fiori-6_Expression-Binding.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
 	<App>
 		<pages>
 			<Page title="{i18n>title}">
-				<content></content>
+				<content>
+					<form:SimpleForm>
+						<form:content>
+							<Label text="Car Name"></Label>
+							<Input value="{/cardata/name}"></Input>
+							
+							<Label text="Car Price"></Label>
+							<Input value="{/cardata/price}"></Input>
+							
+							<Label text="On Road Price"></Label>
+							<!--this is also a part of expression binding-->
+							<Input value="{= ${/cardata/price} * 1.2 }"></Input>
+							
+							<Label text="Star"></Label>
+							<Input value="{/cardata/star}"  ></Input>
+							
+							<Label text="Safty Pass/Fail"></Label>
+							<!--after expression first one is if true then write message in [''] and second is if false-->
+							<Input placeholder="Out of / 10" value="{= ${/cardata/star} > 3.00 ? 'Pass':'Fail'}"></Input>
+							
+							<Label text="Buy"></Label>
+							<!--in enabled we have only two value true or false if you want message than write message in between [''] single inverted comma-->
+							<CheckBox enabled="{= ${/cardata/star} > 3.00 ? true:false}"></CheckBox>   
+						
+						</form:content>
+					</form:SimpleForm>
+				</content>
 			</Page>
 		</pages>
 	</App>
