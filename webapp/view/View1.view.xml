@@ -22,7 +22,7 @@
 							<Label text="Safty Pass/Fail"></Label>
 							<!--after expression first one is if true then write message in [''] and second is if false-->
 							<Input placeholder="Out of / 10" value="{= ${/cardata/star} > 3.00 ? 'Pass':'Fail'}"></Input>
-							
+							                                                           
 							<Label text="Buy"></Label>
 							<!--in enabled we have only two value true or false if you want message than write message in between [''] single inverted comma-->
 							<CheckBox enabled="{= ${/cardata/star} > 3.00 ? true:false}"></CheckBox>   
